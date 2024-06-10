@@ -1,0 +1,130 @@
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-pink: rgb(173, 40, 235, 100%);
+  --clr-main: hsl(292, 42%, 14%);
+  --clr-accent: hsl(292, 16%, 49%);
+  --p-size: 16px;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
+  font-weight: 400 600 700;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+}
+body {
+  scroll-behavior: smooth;
+  font-family: "Work Sans";
+  font-weight: 400;
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #f8eeff;
+}
+.container {
+  margin: 167.5px auto;
+  box-shadow: 32px 0 56px rgb(80, 0, 118, 10%);
+  max-width: 600px;
+  min-width: 270px;
+  padding: 40px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--clr-white);
+}
+header {
+  --margin-b: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: var(--margin-b);
+}
+header img {
+  width: 40px;
+  height: 40px;
+}
+h1 {
+  font-size: 56px;
+  color: var(--clr-main);
+  font-weight: 700;
+}
+
+/* Frequently asked question container */
+.query-container {
+  --padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: #f8eeff solid 1px;
+}
+.query {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--padding) 0;
+}
+.query h2 {
+  --font-s: 18px;
+  font-weight: 600;
+  font-size: var(--font-s);
+  color: var(--clr-main);
+}
+.query:hover h2 {
+  color: var(--clr-pink);
+}
+.query img {
+  --img-sz: 32px;
+  width: var(--img-sz);
+  height: var(--img-sz);
+  transition: transform 0.7s ease-in-out;
+}
+.response {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+.response p {
+  padding-bottom: var(--padding);
+  font-size: var(--p-size);
+  color: var(--clr-accent);
+}
+
+/* javaScript active changes */
+.query-container.active .response {
+  max-height: 300px;
+}
+.query-container.active img {
+  transform: rotate(180deg);
+  content: url(assets/images/icon-minus.svg);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 600px) {
+  body {
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    --p-size: 14px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  header {
+    --margin-b: 24px;
+  }
+  .container {
+    margin: 142.5px 24px;
+    padding: 24px;
+  }
+  .query h2 {
+    --font-s: 16px;
+  }
+  .query-container {
+    --padding: 20px;
+  }
+}
