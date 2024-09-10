@@ -23,10 +23,14 @@ body {
   scroll-behavior: smooth;
   font-family: "Work Sans";
   font-weight: 400;
+  min-height: 100vh;
   background-image: url(assets/images/background-pattern-desktop.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: #f8eeff;
+}
+main {
+  max-width: 1440px;
 }
 .container {
   margin: 167.5px auto;
@@ -34,6 +38,7 @@ body {
   max-width: 600px;
   min-width: 270px;
   padding: 40px;
+  padding-bottom: 0;
   height: 100%;
   border-radius: 10px;
   background-color: var(--clr-white);
@@ -43,7 +48,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 13px;
+  gap: 24px;
   margin-bottom: var(--margin-b);
 }
 header img {
@@ -94,6 +99,7 @@ h1 {
   padding-bottom: var(--padding);
   font-size: var(--p-size);
   color: var(--clr-accent);
+  line-height: 23.5px;
 }
 
 /* javaScript active changes */
